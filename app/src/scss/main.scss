@@ -1,0 +1,9 @@
+@import "reset";
+@import "auth";
+@import "admin";
+@import "user";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(90deg, white 0%, powderblue 100%);
+}
