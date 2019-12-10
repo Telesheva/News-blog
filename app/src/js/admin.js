@@ -1,4 +1,3 @@
-const addBtn = document.querySelector('#create-btn');
 const closeBtn = document.getElementById('close');
 const modalBtns = document.getElementsByClassName('modal-btn');
 
@@ -68,8 +67,6 @@ function openModalForm() {
 function logout() {
     window.location.href = 'http://localhost:3000/';
 }
-
-addBtn.addEventListener('click', openModalForm);
 
 Array.from(modalBtns).forEach(btn => {
     btn.addEventListener('click', e => {
