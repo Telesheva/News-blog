@@ -1,13 +1,6 @@
-const closeBtn = document.getElementById('close');
 const modalBtns = document.getElementsByClassName('modal-btn');
-
-const errorBlock = document.querySelector('#error');
-const errorMessage = document.querySelector('#error-message');
-
 const createForm = document.querySelector('#create-form');
-
 const coverBlock = document.querySelector('#cover');
-
 const newsList = document.querySelector('#news-list');
 const title = document.querySelector('#news-title');
 const content = document.querySelector('#news-content');
@@ -78,7 +71,3 @@ Array.from(modalBtns).forEach(btn => {
     });
 });
 
-closeBtn.addEventListener('click', e => {
-    errorBlock.style.display = 'none';
-    errorBlock.style.opacity = '0';
-});
