@@ -81,3 +81,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.toast-header {
+  width: 300px;
+  text-align: center;
+  height: 120px;
+}
+
+#error {
+  z-index: 5;
+}

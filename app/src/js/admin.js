@@ -1,6 +1,9 @@
 const addBtn = document.querySelector('#create-btn');
-const editBtn = document.querySelector('#edit');
+const closeBtn = document.getElementById('close');
 const modalBtns = document.getElementsByClassName('modal-btn');
+
+const errorBlock = document.querySelector('#error');
+const errorMessage = document.querySelector('#error-message');
 
 const createForm = document.querySelector('#create-form');
 
@@ -11,6 +14,7 @@ const title = document.querySelector('#news-title');
 const content = document.querySelector('#news-content');
 
 const newsArr = JSON.parse(localStorage.getItem('news'));
+
 
 window.onload = function () {
     if (newsArr.length > 0) {
@@ -24,13 +28,15 @@ window.onload = function () {
 };
 
 function onAddItem() {
-    newsArr.push({
-        id: Math.random() * 19,
-        title: title.value,
-        content: content.value
-    });
-    localStorage.setItem('news', JSON.stringify(newsArr));
-    createNewsItemHTML(title.value, content.value);
+    if (title.value && content.value) {
+        newsArr.push({
+            id: Math.random() * 19,
+            title: title.value,
+            content: content.value
+        });
+        localStorage.setItem('news', JSON.stringify(newsArr));
+        createNewsItemHTML(title.value, content.value);
+    }
 }
 
 function onDeleteItem(item) {
@@ -59,11 +65,11 @@ function openModalForm() {
     coverBlock.style.display = 'block';
 }
 
+function logout() {
+    window.location.href = 'http://localhost:3000/';
+}
+
 addBtn.addEventListener('click', openModalForm);
-editBtn.addEventListener('click', () => {
-    openModalForm();
-    //Here will be code for editing
-});
 
 Array.from(modalBtns).forEach(btn => {
     btn.addEventListener('click', e => {
@@ -73,4 +79,9 @@ Array.from(modalBtns).forEach(btn => {
         content.value = '';
         e.preventDefault();
     });
+});
+
+closeBtn.addEventListener('click', e => {
+    errorBlock.style.display = 'none';
+    errorBlock.style.opacity = '0';
 });

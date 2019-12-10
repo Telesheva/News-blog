@@ -22,3 +22,7 @@ function createNewsItemHTML(title, content) {
         '        </div>\n' +
         '    </li>');
 }
+
+function logout() {
+    window.location.href = 'http://localhost:3000/';
+}
