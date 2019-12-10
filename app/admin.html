@@ -16,33 +16,18 @@
 <form class="form create-form" id="create-form">
     <label>
         <span class="form__text">News title</span>
-        <input type="text" class="form__input form-control" placeholder="Enter news title" required/>
+        <input type="text" class="form__input form-control" placeholder="Enter news title" id="news-title"/>
     </label>
     <label>
         <span class="form__text">News content</span>
-        <textarea class="form-control" placeholder="Enter news content" rows="3" required></textarea>
+        <textarea class="form-control" placeholder="Enter news content" rows="3" id="news-content"></textarea>
     </label>
     <div class="form__buttons">
-        <button class="btn btn-dark">Close</button>
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-dark modal-btn">Close</button>
+        <button class="btn btn-primary modal-btn" onclick="onAddItem()">Save</button>
     </div>
 </form>
-<ul class="news">
-    <li class="news__item">
-        <div class="news__item__text">
-            <span class="news__item__title">News Title</span>
-            <p class="news__item__content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum est id ipsum.
-                Atque cupiditate deleniti doloribus eaque esse, facilis inventore itaque.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum est id ipsum.
-                Atque cupiditate deleniti doloribus eaque esse, facilis inventore itaque.
-            </p>
-        </div>
-        <div class="news__item__icons">
-            <img src="src/img/edit.svg" id="edit" alt="edit" width="35px" height="35px"/>
-            <img src="src/img/close.svg" id="delete" alt="delete"/>
-        </div>
-    </li>
+<ul class="news" id="news-list">
 </ul>
 <script src="src/js/admin.js"></script>
 </body>
