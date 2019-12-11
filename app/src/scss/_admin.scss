@@ -74,6 +74,13 @@
   display: none;
 }
 
+.close-form {
+  margin-left: 90%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .create-form {
   position: absolute;
   z-index: 3;
