@@ -13,23 +13,25 @@
     <button class="buttons__logout btn btn-dark" onclick="logout()">Log out</button>
 </div>
 <div id="cover"></div>
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="error" style="position: absolute; top: 5%; right: 3%;" data-autohide="false">
-    <div class="toast-header">
-        <strong id="error-message"></strong>
-        <button type="button" class="ml-2 mb-1 close" id="close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-</div>
-<form class="form create-form" id="create-form" onsubmit="onSubmitForm(event.target.dataset)">
+<form class="form create-form" id="create-form" onsubmit="onSubmitForm(event, event.target.dataset)">
     <img src="src/img/close.svg" class="close-form" id="close-form-btn" alt="close-form"/>
     <label>
         <span class="form__text">News title</span>
-        <input type="text" class="form__input form-control" placeholder="Enter news title" id="news-title"/>
+        <input
+                type="text"
+               class="form__input form-control"
+               placeholder="Enter news title"
+               id="news-title"
+        />
     </label>
     <label>
         <span class="form__text">News content</span>
-        <textarea class="form-control" placeholder="Enter news content" rows="3" id="news-content"></textarea>
+        <textarea
+                class="form-control"
+                placeholder="Enter news content"
+                rows="3"
+                id="news-content"
+        ></textarea>
     </label>
     <div class="form__buttons">
         <button class="btn btn-primary" type="submit" id="save-btn">Save</button>

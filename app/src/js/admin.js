@@ -1,10 +1,11 @@
 const coverBlock = document.querySelector('#cover');
+
 const newsList = document.querySelector('#news-list');
 const title = document.querySelector('#news-title');
 const content = document.querySelector('#news-content');
+
 const modalForm = document.querySelector('#create-form');
 const closeModalBtn = document.querySelector('#close-form-btn');
-//const saveBtn = document.querySelector('#save-btn');
 
 const newsArr = JSON.parse(localStorage.getItem('news'));
 
@@ -18,18 +19,13 @@ function renderAllNews() {
             createNewsItemHTML(item);
         });
     } else {
-        newsList.insertAdjacentHTML('afterbegin', '<h3 style="text-align: center">You do not have news!</h3>');
+        newsList.insertAdjacentHTML('afterbegin', '<h3 style="text-align: center">You have no news!</h3>');
     }
 }
 
-function onSubmitForm({id, type}) {
-    type === 'create' ? onAddItem() : onEditItem(id);
-/*    if (!title.value && !content.value) {
-        displayErrorBlock();
-    }*/
-}
+const onSubmitForm = (event, {id, type}) => type === 'create' ? onAddItem(event) : onEditItem(event, id);
 
-function onAddItem() {
+function onAddItem(event) {
     if (title.value && content.value) {
         newsArr.push({
             id: (Math.random() * 10).toFixed(3),
@@ -37,10 +33,12 @@ function onAddItem() {
             content: content.value
         });
         renderAllNews();
+    } else {
+        event.preventDefault();
     }
 }
 
-function onEditItem(id) {
+function onEditItem(event, id) {
     if (title.value && content.value) {
         const newItem = {
             id,
@@ -50,6 +48,8 @@ function onEditItem(id) {
         const index = newsArr.findIndex(el => el.id === id);
         newsArr.splice(index, 1, newItem);
         renderAllNews();
+    } else {
+        event.preventDefault();
     }
 }
 
@@ -100,18 +100,9 @@ function fillInputsWithNewsDataIfEdit(id, type) {
     }
 }
 
-/*function displayErrorBlock() {
-    errorBlock.style.display = 'inline';
-    errorBlock.style.opacity = '1';
-    errorMessage.textContent = 'Enter the news title and content, please!';
-}*/
-
 function logout() {
     window.location.href = 'http://localhost:3000/';
 }
 
-
 //Event Listeners
 closeModalBtn.addEventListener('click', hideModalForm);
-
-
