@@ -1,6 +1,5 @@
 const newsList = document.querySelector('#news-list');
 const newsArr = JSON.parse(localStorage.getItem('news'));
-// import {renderAllNews} from "./module";
 
 window.onload = renderNews;
 
@@ -26,5 +25,5 @@ function createUserNewsHTML(item) {
 }
 
 function logout() {
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'http://localhost:3000/'
 }

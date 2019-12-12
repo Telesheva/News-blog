@@ -101,8 +101,9 @@ function fillInputsWithNewsDataIfEdit(id, type) {
 }
 
 function logout() {
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'http://localhost:3000/'
 }
 
 //Event Listeners
 closeModalBtn.addEventListener('click', hideModalForm);
+
