@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>News</title>
-    <link rel="stylesheet" href="src/css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-</head>
-<body>
-<div class="buttons">
-    <button class="buttons__add" onclick="showModalForm('no-id', 'create')">+</button>
-    <button class="buttons__logout btn btn-dark" onclick="logout()">Log out</button>
-</div>
-<div id="cover"></div>
-<form class="form create-form" id="create-form" onsubmit="onSubmitForm(event, event.target.dataset)">
-    <img src="src/img/close.svg" class="close-form" id="close-form-btn" alt="close-form"/>
-    <label>
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="buttons">
+      <button class="buttons__add" onclick="showModalForm('no-id', 'create')">
+        +
+      </button>
+      <button class="buttons__logout btn btn-dark" onclick="logout()">
+        Log out
+      </button>
+    </div>
+    <div id="cover"></div>
+    <form
+      class="form create-form"
+      id="create-form"
+      onsubmit="onSubmitForm(event, event.target.dataset)"
+    >
+      <img
+        src="src/img/close.svg"
+        class="close-form"
+        id="close-form-btn"
+        alt="close-form"
+      />
+      <label>
         <span class="form__text">News title</span>
         <input
-                type="text"
-               class="form__input form-control"
-               placeholder="Enter news title"
-               id="news-title"
+          type="text"
+          class="form__input form-control"
+          placeholder="Enter news title"
+          id="news-title"
         />
-    </label>
-    <label>
+      </label>
+      <label>
         <span class="form__text">News content</span>
         <textarea
-                class="form-control"
-                placeholder="Enter news content"
-                rows="3"
-                id="news-content"
+          class="form-control"
+          placeholder="Enter news content"
+          rows="3"
+          id="news-content"
         ></textarea>
-    </label>
-    <div class="form__buttons">
-        <button class="btn btn-primary" type="submit" id="save-btn">Save</button>
-    </div>
-</form>
-<ul class="news" id="news-list">
-</ul>
-<script src="src/js/admin.js"></script>
-</body>
+      </label>
+      <div class="form__buttons">
+        <button class="btn btn-primary" type="submit" id="save-btn">
+          Save
+        </button>
+      </div>
+    </form>
+    <ul class="news" id="news-list"></ul>
+    <script src="src/js/admin.js"></script>
+  </body>
 </html>
